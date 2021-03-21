@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
-try:
-     x = int(input("Entrez un numero s'il vous plait: "))
-     y = int(input("Entrez un deuxieme numero s'il vous plait: "))
+def mul(x, y):
+    output = x * y
+    return output 
+x = input("Entrez un numero s'il vous plait: ")
+while isinstance(x, str):
+    try:
+        x = int(x)
+    except:
+        x = input("vous avez manque un numero\nENtrez un numero: ")
 
-     z = x * y
-     print("Le resultat de", x , "x", y , "est de", z) 
-except:
-     print("Vous avez fait une erreur")
+y = input("Entrez un deuxieme numero s'il vous plait: ")
+while isinstance(y, str):
+    try:
+        y = int(y)
+    except:
+        y = input("vous n'avez pas entrer de numero\nEntrez un numero: ")
+     
+print("Le resultat de", x , "x", y , "est de", mul(x, y)) 
